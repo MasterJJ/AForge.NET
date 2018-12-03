@@ -286,6 +286,8 @@ namespace AForge.Video
                 // create image processing thread
                 imageProcessingThread = new Thread( new ThreadStart( imageProcessingThread_Worker ) );
                 imageProcessingThread.Start( );
+                // masterj
+                imageProcessingThread.Priority = ThreadPriority.Highest;
 
                 // start the nested video source
                 nestedVideoSource.NewFrame += new NewFrameEventHandler( nestedVideoSource_NewFrame );
